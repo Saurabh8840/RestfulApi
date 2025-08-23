@@ -12,7 +12,6 @@ import {
   CardContent,
 } from "../components/ui/Card";
 import { Label } from "../components/ui/Label";
-// import axios from "axios";
 import axios from "axios";
 
 export default function Dashboard() {
@@ -69,7 +68,7 @@ export default function Dashboard() {
           { Name: name, email, age }, // 👈 match backend schema
           { headers: { Authorization: `Bearer ${token}` } }
         );
-        setProfiles([...profiles, res.data]);
+        setProfiles([ res.data,...profiles]);
       }
 
       // reset
@@ -247,7 +246,10 @@ export default function Dashboard() {
               ))}
             </div>
           )}
+
+
         </div>
+
       </div>
     </div>
   );

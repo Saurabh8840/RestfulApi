@@ -5,6 +5,8 @@ import { LoginUser } from "../controllers/users.controllers.js";
 
 const router=Router();
 
+// router.route("/Signup").post(SignupUser)
+// router.route("/Login").post(LoginUser);
 router.route("/Signup").post(SignupUser)
 router.route("/Login").post(LoginUser);
 

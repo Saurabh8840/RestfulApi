@@ -6,8 +6,8 @@ import { updateUser } from "../controllers/users.controllers.js";
 import { deleteUser } from "../controllers/users.controllers.js";
 
 
+// const router=Router();
 const router=Router();
-
 
 router.route("/getusers").get(getUser);
 router.route("/newuser").post(newUser)
