@@ -32,7 +32,7 @@ export default function Dashboard() {
     }
 
     axios
-      .get("http://localhost:8000/api/dashboard/getusers", {
+      .get(`${import.meta.env.VITE_API_URL}/api/dashboard/getusers`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -55,7 +55,7 @@ export default function Dashboard() {
       if (editId) {
         // Update
         const res = await axios.put(
-          `http://localhost:8000/api/dashboard/updateUser/${editId}`,
+          `${import.meta.env.VITE_API_URL}/api/dashboard/updateUser/${editId}`,
           { Name: name, email, age }, // 👈 match backend schema
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -64,7 +64,7 @@ export default function Dashboard() {
       } else {
         // Create
         const res = await axios.post(
-          "http://localhost:8000/api/dashboard/newuser",
+          `${import.meta.env.VITE_API_URL}/api/dashboard/newuser`,
           { Name: name, email, age }, // 👈 match backend schema
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -86,7 +86,7 @@ export default function Dashboard() {
     const token = localStorage.getItem("token");
 
     try {
-      await axios.delete(`http://localhost:8000/api/dashboard/delete/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/dashboard/delete/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProfiles(profiles.filter((profile) => profile._id !== id));

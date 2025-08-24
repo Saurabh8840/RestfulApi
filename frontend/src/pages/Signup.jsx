@@ -26,7 +26,7 @@ export default function Signup() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/users/Signup",
+        `${import.meta.env.VITE_API_URL}/api/users/Signup`,
         {
           name,
           email,
@@ -47,6 +47,7 @@ export default function Signup() {
         alert("Network error");
       }
     }
+    
   };
 
   return (

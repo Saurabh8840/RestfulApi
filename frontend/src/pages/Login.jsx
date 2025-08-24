@@ -20,7 +20,7 @@ export default function Login() {
      
      e.preventDefault()
      try {
-      const response=await axios.post("http://localhost:8000/api/users/Login",
+      const response=await axios.post(`${import.meta.env.VITE_API_URL}/api/users/Login`,
        {
          email,
          password
