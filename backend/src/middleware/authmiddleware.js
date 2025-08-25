@@ -23,6 +23,8 @@ export const verifyjwt=asyncHandler(async(req,res,next)=>{
     
         }
     
+        // req.user=user
+        // next();
         req.user=user
         next();
     } catch (error) {
