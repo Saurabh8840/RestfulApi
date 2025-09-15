@@ -1,0 +1,30 @@
+#     base Image
+FROM node:16-alpine 
+
+# working directory
+
+WORKDIR /app
+
+#copy only package.json and package-lock.json first 
+COPY package*.json ./
+
+
+# run command to build the code
+
+RUN npm install 
+
+
+# copy over file
+# copy everthing over to app
+COPY . .
+
+
+
+
+
+# expose ports
+EXPOSE  3000
+
+# final command that run when running the container
+
+CMD ["npm" ,"run","dev"]
