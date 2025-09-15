@@ -11,6 +11,7 @@ COPY package*.json ./
 
 # run command to build the code
 
+# RUN npm install 
 RUN npm install 
 
 
